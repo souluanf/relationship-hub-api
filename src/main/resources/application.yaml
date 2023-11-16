@@ -1,0 +1,59 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    encoding:
+      force: true
+  shutdown: graceful
+spring:
+  application:
+    name: relationship-hub-api
+  profiles:
+    active: ${relationship-hub-api.spring.profiles.active:dev}
+  datasource:
+    driver-class-name: ${relationship-hub-api.datasource.driver-class-name}
+    password: ${relationship-hub-api.datasource.password}
+    username: ${relationship-hub-api.datasource.username}
+    url: ${relationship-hub-api.datasource.url}
+    hikari:
+      maximum-pool-size: ${relationship-hub-api.datasource.pool-size}
+  h2:
+    console:
+      enabled: ${relationship-hub-api.h2.console.enabled}
+      path: ${relationship-hub-api.h2.console.path}
+      settings:
+          web-allow-others: ${relationship-hub-api.h2.console.settings.web-allow-others}
+  web:
+    resources:
+      add-mappings: false
+  jpa:
+    open-in-view: false
+    properties.hibernate:
+      enable_lazy_load_no_trans: true
+    show-sql: true
+  mvc:
+    throw-exception-if-no-handler-found: true
+  main:
+    allow-bean-definition-overriding: true
+  jackson:
+    default-property-inclusion: non_null
+springdoc:
+  swagger-ui:
+    enabled: ${relationship-hub-api.springdoc.swagger-ui.enabled}
+    operations-sorter: method
+    tags-sorter: alpha
+    display-request-duration: true
+swagger-servers-urls: ${relationship-hub-api.swagger-servers-urls}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, metrics
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  pattern:
+    console: "%red(%d{yyyy-MM-dd'T'HH:mm:ssXXX}) %magenta([%thread]) [${spring.application.name}, %X{traceId:-}, %X{spanId:-}] %highlight(%-5level) %logger{36}.%M - %msg%n"
