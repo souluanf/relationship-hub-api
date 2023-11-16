@@ -1,4 +1,4 @@
-name: SonarCloud
+name: Google Cloud Run CI/CD
 on:
   push:
     branches:
