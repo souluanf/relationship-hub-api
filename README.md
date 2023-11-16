@@ -58,7 +58,7 @@ Para acessar a API, utilize as seguinte URL:
 Para acessar o banco de dados H2 utilizado pelo projeto, utilize a seguintes URL:
 
 - **Console H2 (local):** [http://localhost:8080/h2-console](http://localhost:8080/h2-console)
-- **Console H2 (produção):** [https://hub.luanfernandes.dev/h2-console](https://hub.luanfernandes.dev/h2-console) ->  [credenciais](#configurações-do-banco-de-dados)
+- **Console H2 (produção):** [https://hub.luanfernandes.dev/h2-console](https://hub.luanfernandes.dev/h2-console)
 
 
 ### Credenciais
@@ -67,10 +67,17 @@ Para acessar o banco de dados H2 utilizado pelo projeto, utilize a seguintes URL
 |:----------------------------------:|:----------------------:|:----------------------:|
 | `jdbc:h2:mem:relationship_hub_api` | `relationship_hub_api` | `relationship_hub_api` |
 
-## Contato
+## Observações
+- **Spring Boot:** Proporciona desenvolvimento ágil e configuração simplificada, melhorando a eficiência em aplicações Java.
+- **CI/CD com GitHub Actions:** Automatiza o deploy, assegurando entregas eficientes e confiáveis.
+- **Design Pattern Listener e Event:** Eficiente na gestão de solicitações; alternativas como RabbitMQ ou Kafka são opções futuras para escalabilidade.
+- **Testes Unitários e de Integração:** Garantem a funcionalidade e confiabilidade do sistema em todos os níveis.
+- **Análise de Qualidade com Jacoco e Sonar:** Assegura código de alta qualidade com 100% de cobertura e sem falhas ou vulnerabilidades.
 
+## Contato
 Para suporte ou feedback:
 
 - **Nome:** Luan Fernandes
 - **Email:**  [hello@luanfernandes.dev](mailto:hello@luanfernandes.dev)
 - **Website:** [https://luanfernandes.dev](https://luanfernandes.dev)
+- **LinkedIn:** [https://www.linkedin.com/in/souluanf](https://www.linkedin.com/in/souluanf)
