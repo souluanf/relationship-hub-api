@@ -14,4 +14,4 @@ relationship-hub-api:
   springdoc:
     swagger-ui:
       enabled: true
-  swagger-servers-urls: https://hub.luanfernandes.dev, https://site-kr6x2u2m3q-uc.a.run.app
+  swagger-servers-urls: https://hub.luanfernandes.dev

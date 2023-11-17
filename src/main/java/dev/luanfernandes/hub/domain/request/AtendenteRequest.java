@@ -9,4 +9,4 @@ import org.springframework.validation.annotation.Validated;
 
 @Validated
 public record AtendenteRequest(
-        @Email String email, @NotBlank @Size(max = 255) String nome, @NotNull TipoEquipeEnum equipe) {}
+        @Email @NotBlank String email, @NotBlank @Size(max = 255) String nome, @NotNull TipoEquipeEnum equipe) {}

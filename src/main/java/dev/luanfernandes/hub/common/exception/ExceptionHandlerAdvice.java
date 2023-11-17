@@ -11,7 +11,6 @@ import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.ConstraintViolationException;
 import java.time.Instant;
 import java.util.List;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ProblemDetail;
 import org.springframework.http.ResponseEntity;
@@ -20,22 +19,18 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.server.ResponseStatusException;
 
-@Slf4j
 @RestControllerAdvice
 public class ExceptionHandlerAdvice {
-
     private static final String TIMESTAMP_PROPERTY = "timestamp";
-    private static final String STACKTRACE_PROPERTY = "stacktrace";
-    private static final String DETAILS_FORMAT = "%s: %s";
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     ProblemDetail handleMethodArgumentNotValidException(MethodArgumentNotValidException exception) {
         ProblemDetail problemDetail = forStatusAndDetail(BAD_REQUEST, "Validation failed for argument");
         List<String> errors = exception.getBindingResult().getFieldErrors().stream()
-                .map(error -> format(DETAILS_FORMAT, error.getField(), error.getDefaultMessage()))
+                .map(error -> format("%s: %s", error.getField(), error.getDefaultMessage()))
                 .toList();
         problemDetail.setProperty(TIMESTAMP_PROPERTY, Instant.now());
-        problemDetail.setProperty(STACKTRACE_PROPERTY, errors);
+        problemDetail.setProperty("stacktrace", errors);
         return problemDetail;
     }
 

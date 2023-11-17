@@ -43,10 +43,4 @@ public class Atendente {
 
     @OneToMany(mappedBy = "atendente", cascade = ALL, orphanRemoval = true)
     private List<Solicitacao> solicitacoes = new ArrayList<>();
-
-    public Atendente(String nome, String email, TipoEquipeEnum equipe) {
-        this.nome = nome;
-        this.email = email;
-        this.equipe = equipe;
-    }
 }

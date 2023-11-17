@@ -4,8 +4,6 @@ import static dev.luanfernandes.hub.constants.TestConstants.ANY_ID;
 import static dev.luanfernandes.hub.constants.TestConstants.ANY_STRING;
 import static dev.luanfernandes.hub.constants.TestConstants.VALID_EMAIL;
 import static dev.luanfernandes.hub.domain.enums.TipoEquipeEnum.CARTOES;
-import static dev.luanfernandes.hub.domain.enums.TipoEquipeEnum.EMPRESTIMOS;
-import static dev.luanfernandes.hub.domain.enums.TipoEquipeEnum.OUTROS;
 import static java.util.List.of;
 
 import dev.luanfernandes.hub.domain.entity.Atendente;
@@ -45,17 +43,5 @@ public class AtendenteTestUtils {
                 atendente.getEmail(),
                 atendente.getEquipe(),
                 new ChamadosResponse(0L, 0L));
-    }
-
-    public static List<Atendente> getAtendenteOutrosList() {
-        return of(new Atendente(ANY_ID, ANY_STRING, VALID_EMAIL, OUTROS, new ArrayList<>()));
-    }
-
-    public static List<Atendente> getAtendenteEmprestimosList() {
-        return of(new Atendente(ANY_ID, ANY_STRING, VALID_EMAIL, EMPRESTIMOS, new ArrayList<>()));
-    }
-
-    public static List<Atendente> getAtendenteCartoesList() {
-        return of(new Atendente(ANY_ID, ANY_STRING, VALID_EMAIL, CARTOES, new ArrayList<>()));
     }
 }
