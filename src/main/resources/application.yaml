@@ -31,6 +31,8 @@ spring:
     properties.hibernate:
       enable_lazy_load_no_trans: true
     show-sql: true
+    hibernate:
+      ddl-auto: update
   mvc:
     throw-exception-if-no-handler-found: true
   main:
