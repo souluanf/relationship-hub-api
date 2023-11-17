@@ -45,7 +45,6 @@ public class DistribuicaoListenerImpl implements DistribuicaoListener {
     public void onSolicitacaoCriada(SolicitacaoCriadaEvent event) {
         Solicitacao solicitacao = event.solicitacao();
         List<Atendente> atendentesDisponiveis = atendenteService.obterAtendentesDisponiveis(solicitacao.getTipo());
-        System.out.println(atendentesDisponiveis);
         if (!atendentesDisponiveis.isEmpty()) {
             Atendente atendente = atendentesDisponiveis.get(0);
             solicitacao.setAtendente(atendente);
