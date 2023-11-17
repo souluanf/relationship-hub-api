@@ -102,7 +102,7 @@ public interface SolicitacaoController {
     ResponseEntity<SolicitacaoResponse> buscarPorId(@PathVariable String id);
 
     @Operation(
-            summary = "Lista todas as solicitações encerradas",
+            summary = "Filtra solicitações por status",
             tags = {"solicitacoes"},
             responses = {
                 @ApiResponse(responseCode = "200", description = "OK"),
