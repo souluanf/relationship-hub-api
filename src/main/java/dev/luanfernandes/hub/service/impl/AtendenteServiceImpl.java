@@ -30,7 +30,7 @@ public class AtendenteServiceImpl implements AtendenteService {
 
     @Override
     public List<Atendente> obterAtendentesDisponiveis(TipoSolicitacaoEnum tipoSolicitacao) {
-        TipoEquipeEnum equipeDesejada = tipoSolicitacao.getEquipeCorrespondente();
+        TipoEquipeEnum equipeDesejada = tipoSolicitacao.getTipoEquipe();
         return atendenteRepository.findAtendentesDisponiveis(equipeDesejada);
     }
 

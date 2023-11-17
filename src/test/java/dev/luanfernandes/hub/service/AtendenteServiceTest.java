@@ -127,7 +127,7 @@ class AtendenteServiceTest {
     void whenObterAtendentesDisponiveis_thenShouldReturnCorrectList() {
         List<Atendente> atendentesTeste = getAtendenteList();
         TipoSolicitacaoEnum tipoTeste = TipoSolicitacaoEnum.PROBLEMA_CARTAO;
-        when(atendenteRepository.findAtendentesDisponiveis(tipoTeste.getEquipeCorrespondente()))
+        when(atendenteRepository.findAtendentesDisponiveis(tipoTeste.getTipoEquipe()))
                 .thenReturn(atendentesTeste);
         List<Atendente> resultado = atendenteService.obterAtendentesDisponiveis(tipoTeste);
         assertEquals(atendentesTeste, resultado);

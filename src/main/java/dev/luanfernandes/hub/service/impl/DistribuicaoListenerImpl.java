@@ -28,7 +28,7 @@ public class DistribuicaoListenerImpl implements DistribuicaoListener {
         Atendente novoAtendente = event.atendente();
         TipoEquipeEnum equipeDesejada = novoAtendente.getEquipe();
         List<Solicitacao> solicitacoesPendentes =
-                solicitacaoService.obterSolicitacoesPendentesPorEquipe(equipeDesejada.getSolicitacaoCorrespondente());
+                solicitacaoService.obterSolicitacoesPendentesPorEquipe(equipeDesejada.getTipoSolicitacao());
         int alocacoesRealizadas = 0;
         for (Solicitacao proximaSolicitacao : solicitacoesPendentes) {
             if (alocacoesRealizadas >= 3) break;
@@ -45,6 +45,7 @@ public class DistribuicaoListenerImpl implements DistribuicaoListener {
     public void onSolicitacaoCriada(SolicitacaoCriadaEvent event) {
         Solicitacao solicitacao = event.solicitacao();
         List<Atendente> atendentesDisponiveis = atendenteService.obterAtendentesDisponiveis(solicitacao.getTipo());
+        System.out.println(atendentesDisponiveis);
         if (!atendentesDisponiveis.isEmpty()) {
             Atendente atendente = atendentesDisponiveis.get(0);
             solicitacao.setAtendente(atendente);

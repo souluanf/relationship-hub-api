@@ -1,20 +1,18 @@
 package dev.luanfernandes.hub.domain.enums;
 
-import static dev.luanfernandes.hub.domain.enums.TipoEquipeEnum.CARTOES;
-import static dev.luanfernandes.hub.domain.enums.TipoEquipeEnum.EMPRESTIMOS;
-import static dev.luanfernandes.hub.domain.enums.TipoEquipeEnum.OUTROS;
-
 import lombok.Getter;
 
 @Getter
 public enum TipoSolicitacaoEnum {
-    PROBLEMA_CARTAO(CARTOES),
-    PROBLEMA_EMPRESTIMO(EMPRESTIMOS),
-    PROBLEMA_OUTROS(OUTROS);
+    PROBLEMA_CARTAO,
+    SOLICITACAO_EMPRESTIMO,
+    OUTROS;
 
-    private final TipoEquipeEnum equipeCorrespondente;
-
-    TipoSolicitacaoEnum(TipoEquipeEnum equipe) {
-        this.equipeCorrespondente = equipe;
+    public TipoEquipeEnum getTipoEquipe() {
+        return switch (this) {
+            case PROBLEMA_CARTAO -> TipoEquipeEnum.CARTOES;
+            case SOLICITACAO_EMPRESTIMO -> TipoEquipeEnum.EMPRESTIMOS;
+            case OUTROS -> TipoEquipeEnum.OUTROS_ASSUNTOS;
+        };
     }
 }
