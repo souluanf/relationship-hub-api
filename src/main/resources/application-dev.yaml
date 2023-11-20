@@ -4,13 +4,22 @@ relationship-hub-api:
     url: jdbc:h2:mem:relationship_hub_api;DB_CLOSE_ON_EXIT=FALSE;MODE=PostgreSQL
     username: relationship_hub_api
     password: relationship_hub_api
-    pool-size: 1
+    hikari:
+      maximum-pool-size: 1
   h2:
     console:
       enabled: true
       path: /h2-console
       settings:
         web-allow-others: true
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
   springdoc:
     swagger-ui:
       enabled: true

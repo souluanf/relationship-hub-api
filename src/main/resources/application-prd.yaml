@@ -1,18 +1,20 @@
 relationship-hub-api:
   datasource:
-    driver-class-name: org.h2.Driver
-    url: jdbc:h2:mem:relationship_hub_api;DB_CLOSE_ON_EXIT=FALSE;MODE=PostgreSQL
-    # url: jdbc:h2:file:relationship_hub_api;MODE=PostgreSQL
-    username: relationship_hub_api
-    password: relationship_hub_api
-    pool-size: 1
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
-      settings:
-          web-allow-others: true
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://${relationship-hub-api.datasource.host}:${relationship-hub-api.datasource.port}/${relationship-hub-api.datasource.db}
+    username: ${relationship-hub-api.datasource.username}
+    password: ${relationship-hub-api.datasource.password}
+    hikari:
+      maximum-pool-size: 1
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
   springdoc:
     swagger-ui:
       enabled: true
-  swagger-servers-urls: https://hub.luanfernandes.dev
+  swagger-servers-urls: ${relationship-hub-api.swagger-servers-urls}

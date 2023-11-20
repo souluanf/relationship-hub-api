@@ -16,23 +16,18 @@ spring:
     username: ${relationship-hub-api.datasource.username}
     url: ${relationship-hub-api.datasource.url}
     hikari:
-      maximum-pool-size: ${relationship-hub-api.datasource.pool-size}
-  h2:
-    console:
-      enabled: ${relationship-hub-api.h2.console.enabled}
-      path: ${relationship-hub-api.h2.console.path}
-      settings:
-          web-allow-others: ${relationship-hub-api.h2.console.settings.web-allow-others}
+      maximum-pool-size: ${relationship-hub-api.datasource.hikari.maximum-pool-size}
   web:
     resources:
       add-mappings: false
   jpa:
-    open-in-view: false
-    properties.hibernate:
-      enable_lazy_load_no_trans: true
-    show-sql: true
+    open-in-view: ${relationship-hub-api.jpa.open-in-view}
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: ${relationship-hub-api.jpa.properties.hibernate.enable_lazy_load_no_trans}
     hibernate:
-      ddl-auto: update
+      ddl-auto: ${relationship-hub-api.jpa.hibernate.ddl-auto}
+    show-sql: ${relationship-hub-api.jpa.show-sql}
   mvc:
     throw-exception-if-no-handler-found: true
   main:
