@@ -1,5 +1,5 @@
-# Relationship Hub API
-A Relationship Hub API é uma solução moderna e eficiente para centralizar e otimizar o atendimento ao cliente. Esta API automatiza a distribuição de solicitações para as equipes de atendimento, gerencia filas de espera e monitora a capacidade de atendimento, garantindo uma experiência de suporte ágil e eficaz.
+# Support Hub API
+É uma solução moderna e eficiente para centralizar e otimizar o atendimento ao cliente. Esta API automatiza a distribuição de solicitações para as equipes de atendimento, gerencia filas de espera e monitora a capacidade de atendimento, garantindo uma experiência de suporte ágil e eficaz.
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=souluanf_relationship-hub-api&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=souluanf_relationship-hub-api)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=souluanf_relationship-hub-api&metric=coverage)](https://sonarcloud.io/summary/new_code?id=souluanf_relationship-hub-api)
