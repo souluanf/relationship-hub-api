@@ -1,11 +1,11 @@
 relationship-hub-api:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://${relationship-hub-api.datasource.host}:${relationship-hub-api.datasource.port}/${relationship-hub-api.datasource.db}
-    username: ${relationship-hub-api.datasource.username}
-    password: ${relationship-hub-api.datasource.password}
+    url: jdbc:postgresql://${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_NAME}
+    username: ${DATABASE_USER}
+    password: ${DATABASE_PASSWORD}
     hikari:
-      maximum-pool-size: 1
+      maximum-pool-size: 10
   jpa:
     open-in-view: false
     properties:
@@ -17,4 +17,4 @@ relationship-hub-api:
   springdoc:
     swagger-ui:
       enabled: true
-  swagger-servers-urls: ${relationship-hub-api.swagger-servers-urls}
+  swagger-servers-urls: ${SERVERS_URLS}
