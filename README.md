@@ -50,15 +50,15 @@ A Relationship Hub API é uma solução moderna e eficiente para centralizar e o
 Para acessar a API, utilize as seguinte URL:
 
 - **Swagger UI (Local):** [http://http://localhost:8080](http://http://localhost:8080)
-- **Swagger UI (Produção):** [https://hub.luanfernandes.dev](https://hub.luanfernandes.dev)
+- **Swagger UI (Produção):** [https://supporthub.luanfernandes.dev](https://supporthub.luanfernandes.dev)
 
 
-## Acesso ao Banco de Dados
+## Acesso ao Banco de Dados Local
 
 Para acessar o banco de dados H2 utilizado pelo projeto, utilize a seguintes URL:
 
 - **Console H2 (local):** [http://localhost:8080/h2-console](http://localhost:8080/h2-console)
-- **Console H2 (produção):** [https://hub.luanfernandes.dev/h2-console](https://hub.luanfernandes.dev/h2-console)
+
 
 
 ### Credenciais
